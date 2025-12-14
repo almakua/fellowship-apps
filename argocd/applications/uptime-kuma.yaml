@@ -10,7 +10,7 @@ spec:
   project: default
   
   source:
-    repoURL: https://github.com/YOUR_USERNAME/fellowship-apps.git  # TODO: Sostituisci con il tuo repo
+    repoURL: https://github.com/almakua/fellowship-apps.git  # TODO: Sostituisci con il tuo repo
     targetRevision: main
     path: apps/uptime-kuma
   
