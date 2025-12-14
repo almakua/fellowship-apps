@@ -31,6 +31,7 @@ fellowship-apps/
 | App | Namespace | URL | Descrizione |
 |-----|-----------|-----|-------------|
 | uptime-kuma | uptime-kuma | status.mbianchi.me | Monitoring & Status Page |
+| ntfy | ntfy | ntfy.mbianchi.me | Push Notifications Server |
 
 ## 🔗 Links
 
