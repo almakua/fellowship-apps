@@ -1,0 +1,36 @@
+---
+# =============================================================================
+# App of Apps Pattern
+# =============================================================================
+# Questa Application gestisce tutte le altre Applications.
+# Deploy questa una volta, poi ArgoCD gestirà tutto automaticamente.
+#
+# Uso:
+#   kubectl apply -f argocd/app-of-apps.yaml
+# =============================================================================
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: fellowship-apps
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  
+  source:
+    repoURL: https://github.com/YOUR_USERNAME/fellowship-apps.git  # TODO: Sostituisci con il tuo repo
+    targetRevision: main
+    path: argocd/applications
+  
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+  
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=false
+

@@ -1,0 +1,17 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: APP_NAME  # TODO: sostituisci
+
+resources:
+  - namespace.yaml
+  - deployment.yaml
+  - service.yaml
+  # - ingress.yaml  # Decommentare se serve
+  # - pvc.yaml      # Decommentare se serve
+
+commonLabels:
+  app.kubernetes.io/part-of: fellowship
+  app.kubernetes.io/managed-by: argocd
+
